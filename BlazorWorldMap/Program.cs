@@ -1,6 +1,7 @@
 using BlazorWorldMap.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,10 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSyncfusionBlazor();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjczMTIyQDMyMzAyZTMyMmUzMEVoODJRV3hXNm5rcVN0WmFDSTI0OSsxMThwVEk3VXh6RWgxQ1hUS1dHQmc9");
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
